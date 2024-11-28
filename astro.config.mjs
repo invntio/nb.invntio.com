@@ -11,7 +11,5 @@ export default defineConfig({
     include: {
       ic: ['*']
     }
-  })],
-  output: "server",
-  adapter: netlify()
+  })]
 });
