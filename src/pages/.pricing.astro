@@ -1,0 +1,18 @@
+---
+import Pricingsection from '../components/Pricingsection.astro';
+import Breadcrumb from '../components/layout/Breadcrumb.astro';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  description="Neighbor conecta administradores y residentes con herramientas intuitivas que simplifican la operación diaria y promueven la transparencia.."
+  title="Simplifica la gestión de tu condominio | Neighbor"
+  image='https://nb-invntio.netlify.app/assets/preview.png'
+  domain='neighbor.com.do'
+  url='https://neighbor.com.do'
+>
+  <Breadcrumb>
+    <Fragment slot="title">Pricing Page</Fragment>
+  </Breadcrumb>
+  <Pricingsection />
+</Layout>
