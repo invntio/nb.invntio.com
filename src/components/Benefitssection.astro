@@ -1,0 +1,103 @@
+---
+import { Icon } from 'astro-icon/components'
+
+const benefits = [
+  {
+    categoryName: 'Para Administradores',
+    categoryIcon: 'round-admin-panel-settings',
+    items: [
+      {
+        icon: 'round-settings',
+        title: 'Gestión Automatizada',
+        description: 'Automatiza procesos clave como cobros y tareas diarias.',
+      },
+      {
+        icon: 'round-space-dashboard',
+        title: 'Control Centralizado',
+        description: 'Accede a toda la información de tu condominio en un solo lugar.',
+      },
+      {
+        icon: 'round-account-balance',
+        title: 'Gestión Financiera',
+        description: 'Controla pagos, gastos y reportes detallados fácilmente.',
+      },
+    ],
+  },
+  {
+    categoryName: 'Para Residentes',
+    categoryIcon: 'people',
+    items: [
+      {
+        icon: 'notifications-active',
+        title: 'Notificaciones Instantáneas',
+        description: 'Mantente informado con alertas en tiempo real.',
+      },
+      {
+        icon: 'round-forum',
+        title: 'Comunicación Directa',
+        description: 'Reporta incidencias y comunica tus necesidades fácilmente.',
+      },
+      {
+        icon: 'event-available',
+        title: 'Reservas de Áreas Comunes',
+        description: 'Gestiona espacios compartidos de manera sencilla.',
+      },
+    ],
+  },
+];
+
+---
+
+<!-- ====== About Section Start -->
+
+<section class="pt-20 pb-8 lg:pt-[120px] lg:pb-[70px] dark:bg-dark-2" id="benefits">
+  <div class="container mx-auto px-4">
+    <div class="-mx-4 flex flex-wrap">
+      <div class="w-full px-4">
+        <div class="mb-12 mx-auto max-w-[485px] lg:mb-[70px] text-center">
+          <span class="mb-2 block text-lg font-semibold text-blue-500">
+            Beneficios
+          </span>
+          <h2 class="mb-3 text-3xl font-bold text-dark dark:text-white sm:text-4xl md:text-[40px] md:leading-[1.2]">
+            Beneficios para Todos
+          </h2>
+          <p class="text-base text-zinc-400">
+            Nuestra plataforma está diseñada para hacer la gestión de condominios más eficiente y fomentar la transparencia.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="-mx-4 flex flex-wrap">
+      { benefits.map((category) => (
+        <div class="w-full px-4 md:w-1/2 mb-8">
+          <div class="wow fadeInUp group h-full p-8 rounded-[14px] bg-white dark:bg-dark" data-wow-delay=".1s">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="relative z-10 flex h-[70px] w-[70px] items-center justify-center rounded-[14px] bg-primary">
+                <span
+                  class="absolute top-0 left-0 -z-[1] mb-8 flex h-[70px] w-[70px] rotate-[25deg] items-center justify-center rounded-[14px] bg-primary bg-opacity-20 duration-300 group-hover:rotate-45"
+                ></span>
+                <Icon name={`ic:${category.categoryIcon}`} class="text-5xl text-white" />
+              </div>
+              <h3 class="text-2xl font-bold text-dark dark:text-white">{category.categoryName}</h3>
+            </div>
+            <div class="space-y-6">
+              { category.items.map((item) => (
+                <div class="flex gap-4">
+                  <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-primary">
+                    <Icon name={`ic:${item.icon}`} class="text-3xl text-white" />
+                  </div>
+                  <div>
+                    <h4 class="mb-2 text-xl font-semibold text-dark dark:text-white">{item.title}</h4>
+                    <p class="text-body-color dark:text-dark-6">{item.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+<!-- ====== About Section End -->
